@@ -1,20 +1,23 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./PrivateRoute";
 import LayoutRoutes from "./LayoutRoutes";
-import Login from "../Component/Authentication/Login";
+import Login from "../Component/Vyapara/Authentication/Login/Login";
 import { authRoutes } from "./AuthRoutes";
+import { useAppSelector } from "../ReduxToolkit/Hooks";
+// import Login from "../Component/Authentication/Login";
 
 const RouterData = () => {
-  const login = localStorage.getItem("login");
+  // const login = localStorage.getItem("login");
+  const isLoggedIn = useAppSelector((state) => state.user.isLoggedIn);
   return (
     <BrowserRouter basename={"/"}>
       <Routes>
-        {login ? (
+        {isLoggedIn ? (
           <>
             <Route
               path={`${process.env.PUBLIC_URL}` || '/'}
               element={
-                <Navigate to={`${process.env.PUBLIC_URL}/dashboard/default`} />
+                <Navigate to={`${process.env.PUBLIC_URL}/dashboard`} />
               }
             />
           </>

@@ -17,6 +17,9 @@ import FilterSlice from "./Reducers/FilterSlice";
 import CartSlice from "./Reducers/CartSlice";
 import BookmarkHeaderSlice from "./Reducers/BookmarkHeaderSlice";
 import ThemeCustomizerSlice from "./Reducers/ThemeCustomizerSlice";
+import UserReducer from "./Reducers/Users/UserSlice";
+import VendorTabSlice from "./Reducers/Vendors/VendorTabSlice";
+
 
 const Store = configureStore({
   reducer: {
@@ -38,6 +41,8 @@ const Store = configureStore({
     cartData: CartSlice,
     bookmarkHeader:BookmarkHeaderSlice,
     themeCustomizer: ThemeCustomizerSlice,
+    user: UserReducer,
+    vendorTab: VendorTabSlice
   },
 });
 

@@ -80,9 +80,12 @@ export const CurrentYTD = "Current YTD";
 export const ProductOfferHeading = "Product Offer";
 
 // Project Dashboard
-export const ProjectDashboard = "Project Dashboard";
-export const TotalProjectHeading = "Total Project";
+export const ProjectDashboard = "Dashboard";
+export const TotalProjectHeading = "Total Users";
 export const TotalRevenueHeading = "Total Revenue";
+export const TotalActiveVendorsHeading = "Active Vendors";
+export const RecenetDeliveryRequestsHeading = "Recent Delivery Requests";
+export const PendingdeliveriesHeading = "Pending Deliveries";
 export const TotalClientsHeading = "Total Clients";
 export const AllClients = "All Clients";
 export const Invite = "Invite";
@@ -97,6 +100,30 @@ export const Progress = "Progress";
 export const TeamMembersHeading = "Team Members";
 export const AddTaskHeading = "Add Task";
 export const TodoPlaceholder = "Enter new task here. . .";
+
+// User-Management
+export const UserManagement = "User Management";
+export const UserManagementHeading = "User Management";
+
+// Order-Management
+export const OrderManagement = "Order Management";
+export const OrderManagementHeading = "Order Management";
+export const OrderManagementLabel = "Filter By Status";
+
+// Transactions
+export const Transactions = "Transactions";
+export const TransactionsLabel = "Filter By Status";
+
+// Vendor-Management
+export const VendorManagement = "Vendor Management";
+
+// Product-Management
+export const ProductManagement = "Product Management";
+
+// Deposit-Management
+export const DepositManagement = "Deposit Management";
+export const DepositManagementLabel1 = "Filter By Vendors";
+export const DepositManagementLabel2 = "Filter By Status";
 
 // Widgets
 export const Widgets = "Widgets";

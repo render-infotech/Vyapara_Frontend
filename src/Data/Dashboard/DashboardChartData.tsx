@@ -2,6 +2,7 @@ import { ApexOptions } from "apexcharts";
 
 const primary = "#43B9B2";
 const secondary = "#c280d2";
+const warning = "#ffc107";
 export const totalClientsChartData: ApexOptions = {
   series: [
     {
@@ -2037,8 +2038,8 @@ export const totalRevenueChartData: ApexOptions = {
     xaxis: [
       {
         x: 300,
-        borderWidth:2,
-        fillColor:primary,
+        borderWidth: 2,
+        fillColor: primary,
         strokeDashArray: 4,
       },
     ],
@@ -2132,18 +2133,181 @@ export const totalRevenueChartData: ApexOptions = {
   ],
 };
 
-export const totalClientChartData:ApexOptions = {
+export const activeVendorsChartData: ApexOptions = {
   series: [
     {
-      name: 'series1',
+      name: "Active Vendors",
+      data: [15, 18, 20, 22, 25, 30, 28, 26, 32, 35, 33, 40], // sample data
+    },
+  ],
+  chart: {
+    height: 150,
+    type: "line", // use 'line' for a clean activity trend
+    zoom: { enabled: false },
+    toolbar: { show: false },
+    sparkline: { enabled: false },
+  },
+  stroke: {
+    width: 3,
+    curve: "smooth",
+  },
+  markers: {
+    size: 4,
+    colors: [primary],
+    strokeColors: "#fff",
+    strokeWidth: 2,
+    hover: { size: 6 },
+  },
+  colors: [primary],
+  fill: {
+    type: "gradient",
+    gradient: {
+      shadeIntensity: 1,
+      opacityFrom: 0.4,
+      opacityTo: 0.1,
+      stops: [0, 100],
+    },
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  grid: {
+    show: false,
+  },
+  xaxis: {
+    categories: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    labels: { show: false },
+    axisTicks: { show: false },
+    axisBorder: { show: false },
+  },
+  yaxis: {
+    labels: { show: false },
+  },
+  tooltip: {
+    theme: "dark",
+    y: {
+      formatter: (val) => `${val} vendors`,
+    },
+  },
+  responsive: [
+    {
+      breakpoint: 1200,
+      options: {
+        chart: { height: 136 },
+      },
+    },
+  ],
+};
+
+export const pendingDeliveriesChartData: ApexOptions = {
+  series: [
+    {
+      name: "Pending Deliveries",
+      data: [10, 14, 9, 18, 25, 22, 30, 26, 20, 15, 10, 8], // sample data per month
+    },
+  ],
+  chart: {
+    height: 150,
+    type: "area",
+    zoom: { enabled: false },
+    toolbar: { show: false },
+  },
+  colors: [warning],
+  stroke: {
+    curve: "smooth",
+    width: 3,
+  },
+  fill: {
+    type: "gradient",
+    gradient: {
+      shadeIntensity: 1,
+      opacityFrom: 0.5,
+      opacityTo: 0.1,
+      stops: [0, 100],
+    },
+  },
+  grid: {
+    show: false,
+  },
+  dataLabels: {
+    enabled: false,
+  },
+  xaxis: {
+    categories: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
+    labels: { show: false },
+    axisBorder: { show: false },
+    axisTicks: { show: false },
+  },
+  yaxis: {
+    labels: { show: false },
+  },
+  tooltip: {
+    theme: "dark",
+    y: {
+      formatter: (val) => `${val} pending`,
+    },
+  },
+  responsive: [
+    {
+      breakpoint: 1200,
+      options: {
+        chart: { height: 136 },
+      },
+    },
+  ],
+};
+
+export const totalClientChartData: ApexOptions = {
+  series: [
+    {
+      name: "series1",
       data: [10, 8, 20, 10, 9, 16, 8, 12, 9, 20, 8, 10, 9],
     },
   ],
-  colors: ["#f6ecf8", "#f6ecf8", "#f6ecf8", "#f6ecf8", secondary, secondary, secondary, secondary, secondary, "#f6ecf8", "#f6ecf8", "#f6ecf8"],
+  colors: [
+    "#f6ecf8",
+    "#f6ecf8",
+    "#f6ecf8",
+    "#f6ecf8",
+    secondary,
+    secondary,
+    secondary,
+    secondary,
+    secondary,
+    "#f6ecf8",
+    "#f6ecf8",
+    "#f6ecf8",
+  ],
   chart: {
     width: 180,
     height: 66,
-    type: 'bar',
+    type: "bar",
     offsetX: -1, // Set the desired border radius value
     sparkline: {
       enabled: true,
@@ -2153,14 +2317,14 @@ export const totalClientChartData:ApexOptions = {
     enabled: false,
   },
   stroke: {
-    curve: 'smooth',
+    curve: "smooth",
   },
   plotOptions: {
     bar: {
       borderRadius: 7,
       distributed: true,
-      columnWidth: '80%',
-    }
+      columnWidth: "80%",
+    },
   },
   responsive: [
     {
@@ -2198,15 +2362,15 @@ export const totalClientChartData:ApexOptions = {
         },
       },
     },
-],
+  ],
 };
 
-export const projectsOverviewChartData:ApexOptions = {
+export const projectsOverviewChartData: ApexOptions = {
   series: [
     {
       name: "This Month ",
       type: "area",
-      data: [100, 120, 130, 180, 120, 190, 220, 230, 200, 190, 160, 140]
+      data: [100, 120, 130, 180, 120, 190, 220, 230, 200, 190, 160, 140],
     },
     {
       name: "This Month",
@@ -2228,7 +2392,7 @@ export const projectsOverviewChartData:ApexOptions = {
     enabled: false,
   },
   markers: {
-    size: [3 ,0],
+    size: [3, 0],
     colors: "#ffffff",
     strokeColors: "#C280D2",
     strokeWidth: 2,
@@ -2236,15 +2400,15 @@ export const projectsOverviewChartData:ApexOptions = {
     strokeOpacity: 1,
     fillOpacity: 1,
     hover: {
-        size: 6
-    }
-},
-  stroke:{       
-    width:[3,3],
-    curve: ["straight" ,"straight" ],
-     dashArray: [0, 8],
+      size: 6,
+    },
   },
-  colors: [ secondary, primary],
+  stroke: {
+    width: [3, 3],
+    curve: ["straight", "straight"],
+    dashArray: [0, 8],
+  },
+  colors: [secondary, primary],
   xaxis: {
     categories: [
       "Jan",
@@ -2258,8 +2422,7 @@ export const projectsOverviewChartData:ApexOptions = {
       "Sep",
       "Oct",
       "Nov",
-      "Dec"
-      
+      "Dec",
     ],
     axisBorder: {
       show: false,
@@ -2282,13 +2445,13 @@ export const projectsOverviewChartData:ApexOptions = {
     },
   },
   fill: {
-    colors: [secondary , primary],
+    colors: [secondary, primary],
     type: ["gradient", "solid"],
     gradient: {
-      shade: 'dark',
+      shade: "dark",
       type: "vertical",
       shadeIntensity: 1,
-      gradientToColors: [secondary , primary ],
+      gradientToColors: [secondary, primary],
       inverseColors: false,
       opacityFrom: 0.6,
       opacityTo: 0.2,
@@ -2316,23 +2479,22 @@ export const projectsOverviewChartData:ApexOptions = {
     show: false,
   },
   responsive: [
-
     {
-      breakpoint:1400,
-      options:{
-        chart:{
+      breakpoint: 1400,
+      options: {
+        chart: {
           offsetY: 30,
-        }
-      }
+        },
+      },
     },
     {
-      breakpoint:1300,
-      options:{
+      breakpoint: 1300,
+      options: {
         series: [
           {
             name: "This Month ",
             type: "area",
-            data: [100, 120, 130, 180, 120, 190, 220, 230]
+            data: [100, 120, 130, 180, 120, 190, 220, 230],
           },
           {
             name: "This Month",
@@ -2340,24 +2502,24 @@ export const projectsOverviewChartData:ApexOptions = {
             data: [150, 170, 180, 230, 170, 270, 290, 280],
           },
         ],
-      }
+      },
     },
     {
-      breakpoint:1200,
-      options:{
-        chart:{
+      breakpoint: 1200,
+      options: {
+        chart: {
           height: 270,
-        }
-      }
+        },
+      },
     },
     {
       breakpoint: 360,
-      options:{
+      options: {
         series: [
           {
             name: "This Month ",
             type: "area",
-            data: [100, 120, 130, 180, 120, 190]
+            data: [100, 120, 130, 180, 120, 190],
           },
           {
             name: "This Month",
@@ -2365,24 +2527,28 @@ export const projectsOverviewChartData:ApexOptions = {
             data: [150, 170, 180, 230, 170, 270],
           },
         ],
-      }
+      },
     },
   ],
 };
 
-export const activityReportChartData:ApexOptions = {
-  series: [{
-    name: 'Net Profit',
-    data: [105, 58, 20, 64, 120, 105, 65]
-  }, {
-    name: 'Revenue',
-    data: [77, 77, 58, 80, 37, 78, 52]
-  }, {
-    name: 'Free Cash Flow',
-    data: [20, 38, 105, 52, 78, 17, 17]
-  }],
+export const activityReportChartData: ApexOptions = {
+  series: [
+    {
+      name: "Net Profit",
+      data: [105, 58, 20, 64, 120, 105, 65],
+    },
+    {
+      name: "Revenue",
+      data: [77, 77, 58, 80, 37, 78, 52],
+    },
+    {
+      name: "Free Cash Flow",
+      data: [20, 38, 105, 52, 78, 17, 17],
+    },
+  ],
   chart: {
-    type: 'bar',
+    type: "bar",
     height: 300,
     toolbar: {
       show: false,
@@ -2392,29 +2558,29 @@ export const activityReportChartData:ApexOptions = {
   plotOptions: {
     bar: {
       horizontal: false,
-      columnWidth: '45%',
+      columnWidth: "45%",
     },
   },
   dataLabels: {
-    enabled: false
+    enabled: false,
   },
   stroke: {
     show: true,
     width: 2,
-    colors: ['transparent']
+    colors: ["transparent"],
   },
   xaxis: {
-    categories: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    categories: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
     axisBorder: {
       offsetX: 0,
       show: false,
     },
-    axisTicks:{
+    axisTicks: {
       show: false,
-    }
+    },
   },
   legend: {
-    show: false
+    show: false,
   },
   yaxis: {
     labels: {
@@ -2424,10 +2590,10 @@ export const activityReportChartData:ApexOptions = {
   grid: {
     show: true,
     strokeDashArray: 3,
-    borderColor: 'rgba(106, 113, 133, 0.30)',
+    borderColor: "rgba(106, 113, 133, 0.30)",
   },
   fill: {
-    opacity: 1
+    opacity: 1,
   },
   tooltip: {
     enabled: false,
@@ -2435,25 +2601,26 @@ export const activityReportChartData:ApexOptions = {
   responsive: [
     {
       breakpoint: 480,
-      options:{
-        chart:{
+      options: {
+        chart: {
           height: 250,
-        }
-      }
+        },
+      },
     },
   ],
 };
 
-export const teamMembersOneChart:ApexOptions = {
-  series: [{
-    name: 'team 1',
-    data: [5, 10, 5, 10, 5, 14, 12, 14, 15]
-  }
+export const teamMembersOneChart: ApexOptions = {
+  series: [
+    {
+      name: "team 1",
+      data: [5, 10, 5, 10, 5, 14, 12, 14, 15],
+    },
   ],
   chart: {
     width: 100,
     height: 80,
-    type: 'line',
+    type: "line",
     toolbar: {
       show: false,
     },
@@ -2463,22 +2630,22 @@ export const teamMembersOneChart:ApexOptions = {
       left: 3,
       blur: 3,
       color: primary,
-      opacity: 0.2
-    }
+      opacity: 0.2,
+    },
   },
   grid: {
     yaxis: {
       lines: {
         show: false,
-      }
-    }
+      },
+    },
   },
   dataLabels: {
-    enabled: false
+    enabled: false,
   },
   stroke: {
     width: [2, 4],
-    curve: 'straight',
+    curve: "straight",
   },
   xaxis: {
     offsetX: 0,
@@ -2496,7 +2663,7 @@ export const teamMembersOneChart:ApexOptions = {
     },
   },
   legend: {
-    show: false
+    show: false,
   },
   yaxis: {
     show: false,
@@ -2506,27 +2673,28 @@ export const teamMembersOneChart:ApexOptions = {
   },
   responsive: [
     {
-      breakpoint:1490,
-      options:{
-        chart:{
+      breakpoint: 1490,
+      options: {
+        chart: {
           width: 70,
-        }
-      }
+        },
+      },
     },
   ],
   colors: [primary],
 };
 
-export const teamMembersTwoChart:ApexOptions = {
-  series: [{
-    name: 'team 1',
-    data: [5, 10, 15, 5, 20, 19, 18, 20, 5, 8, 20, 5, 10, 12, 15, 17]
-  }
+export const teamMembersTwoChart: ApexOptions = {
+  series: [
+    {
+      name: "team 1",
+      data: [5, 10, 15, 5, 20, 19, 18, 20, 5, 8, 20, 5, 10, 12, 15, 17],
+    },
   ],
   chart: {
     width: 100,
     height: 80,
-    type: 'line',
+    type: "line",
     toolbar: {
       show: false,
     },
@@ -2536,22 +2704,22 @@ export const teamMembersTwoChart:ApexOptions = {
       left: 3,
       blur: 3,
       color: secondary,
-      opacity: 0.2
-    }
+      opacity: 0.2,
+    },
   },
   grid: {
     yaxis: {
       lines: {
         show: false,
-      }
-    }
+      },
+    },
   },
   dataLabels: {
-    enabled: false
+    enabled: false,
   },
   stroke: {
     width: [2, 4],
-    curve: 'straight',
+    curve: "straight",
   },
   xaxis: {
     offsetX: 0,
@@ -2569,7 +2737,7 @@ export const teamMembersTwoChart:ApexOptions = {
     },
   },
   legend: {
-    show: false
+    show: false,
   },
   yaxis: {
     show: false,
@@ -2579,27 +2747,28 @@ export const teamMembersTwoChart:ApexOptions = {
   },
   responsive: [
     {
-      breakpoint:1490,
-      options:{
-        chart:{
+      breakpoint: 1490,
+      options: {
+        chart: {
           width: 70,
-        }
-      }
+        },
+      },
     },
   ],
   colors: [secondary],
 };
 
-export const teamMembersThreeChart:ApexOptions = {
-  series: [{
-    name: 'team 1',
-    data: [5, 15, 8, 12, 15, 18, 20, 25, 15, 10, 15, 12, 25, 20, 5, 10]
-  }
+export const teamMembersThreeChart: ApexOptions = {
+  series: [
+    {
+      name: "team 1",
+      data: [5, 15, 8, 12, 15, 18, 20, 25, 15, 10, 15, 12, 25, 20, 5, 10],
+    },
   ],
   chart: {
     width: 100,
     height: 85,
-    type: 'line',
+    type: "line",
     toolbar: {
       show: false,
     },
@@ -2609,22 +2778,22 @@ export const teamMembersThreeChart:ApexOptions = {
       left: 3,
       blur: 3,
       color: "#FD7E40",
-      opacity: 0.2
-    }
+      opacity: 0.2,
+    },
   },
   grid: {
     yaxis: {
       lines: {
         show: false,
-      }
-    }
+      },
+    },
   },
   dataLabels: {
-    enabled: false
+    enabled: false,
   },
   stroke: {
     width: [2, 4],
-    curve: 'straight',
+    curve: "straight",
   },
   xaxis: {
     offsetX: 0,
@@ -2642,7 +2811,7 @@ export const teamMembersThreeChart:ApexOptions = {
     },
   },
   legend: {
-    show: false
+    show: false,
   },
   yaxis: {
     show: false,
@@ -2652,27 +2821,28 @@ export const teamMembersThreeChart:ApexOptions = {
   },
   responsive: [
     {
-      breakpoint:1490,
-      options:{
-        chart:{
+      breakpoint: 1490,
+      options: {
+        chart: {
           width: 70,
-        }
-      }
+        },
+      },
     },
   ],
   colors: ["#FD7E40"],
 };
 
-export const teamMembersFourChart:ApexOptions = {
-  series: [{
-    name: 'team 1',
-    data: [5, 10, 8, 20, 20, 8, 25, 22, 18, 18]
-  }
+export const teamMembersFourChart: ApexOptions = {
+  series: [
+    {
+      name: "team 1",
+      data: [5, 10, 8, 20, 20, 8, 25, 22, 18, 18],
+    },
   ],
   chart: {
     width: 100,
     height: 80,
-    type: 'line',
+    type: "line",
     toolbar: {
       show: false,
     },
@@ -2682,22 +2852,22 @@ export const teamMembersFourChart:ApexOptions = {
       left: 3,
       blur: 3,
       color: primary,
-      opacity: 0.2
-    }
+      opacity: 0.2,
+    },
   },
   grid: {
     yaxis: {
       lines: {
         show: false,
-      }
-    }
+      },
+    },
   },
   dataLabels: {
-    enabled: false
+    enabled: false,
   },
   stroke: {
     width: [2, 4],
-    curve: 'straight',
+    curve: "straight",
   },
   xaxis: {
     offsetX: 0,
@@ -2715,7 +2885,7 @@ export const teamMembersFourChart:ApexOptions = {
     },
   },
   legend: {
-    show: false
+    show: false,
   },
   yaxis: {
     show: false,
@@ -2725,12 +2895,12 @@ export const teamMembersFourChart:ApexOptions = {
   },
   responsive: [
     {
-      breakpoint:1490,
-      options:{
-        chart:{
+      breakpoint: 1490,
+      options: {
+        chart: {
           width: 70,
-        }
-      }
+        },
+      },
     },
   ],
   colors: [primary],

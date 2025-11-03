@@ -115,6 +115,18 @@ import ReactstrapTabs from "../Pages/Ui-Kits/Tabs/ReactstrapTabs";
 import TagAndPills from "../Pages/Ui-Kits/TagAndPills/TagAndPills";
 import Tooltip from "../Pages/Ui-Kits/Tooltip/Tooltip";
 import Typography from "../Pages/Ui-Kits/Typography/Typography";
+import DashBoard from "../Pages/Vyapara/Admin/DashBoard/DashBoard";
+import DepositManagement from "../Pages/Vyapara/Admin/DepositManagement/DepositManagement";
+import OrderManagement from "../Pages/Vyapara/Admin/OrderManagement/OrderManagement";
+import PricingManagement from "../Pages/Vyapara/Admin/PricingManagement/PricingManagement";
+import ProductManagement from "../Pages/Vyapara/Admin/ProductManagement/ProductManagement";
+import Purchases from "../Pages/Vyapara/Admin/Purchases/Purchases";
+import Reports from "../Pages/Vyapara/Admin/Reports/Reports";
+import CategoryManagement from "../Pages/Vyapara/Admin/SystemSettings/CategoryManagement/CategoryManagement";
+import CommissionManagement from "../Pages/Vyapara/Admin/SystemSettings/CommissionManagement/CommissionManagement";
+import Transactions from "../Pages/Vyapara/Admin/Transactions/Transactions";
+import UserManagement from "../Pages/Vyapara/Admin/UserManagement/UserManagement";
+import VendorManagement from "../Pages/Vyapara/Admin/VendorManagement/VendorManagement";
 import Charts from "../Pages/Widgets/Charts/Charts";
 import General from "../Pages/Widgets/General/General";
 
@@ -123,6 +135,41 @@ const routes = [
   { path: `${process.env.PUBLIC_URL}/dashboard/default`, Component: <Default /> },
   { path: `${process.env.PUBLIC_URL}/dashboard/ecommerce`, Component: <Ecommerce />},
   { path: `${process.env.PUBLIC_URL}/dashboard/project`, Component: <Project />},
+
+  // Vydashboard 
+  { path: `${process.env.PUBLIC_URL}/dashboard`, Component: <DashBoard /> },
+
+  // User management
+  { path: `${process.env.PUBLIC_URL}/user-management`, Component: <UserManagement /> },
+
+  // Digital Purchases
+  { path: `${process.env.PUBLIC_URL}/purchases`, Component: <Purchases /> },
+
+  // Order management
+  { path: `${process.env.PUBLIC_URL}/order-management`, Component: <OrderManagement /> },
+
+  // Deposit Mangement
+  { path: `${process.env.PUBLIC_URL}/deposit-management`, Component: <DepositManagement /> },
+
+  // Transactions
+  { path: `${process.env.PUBLIC_URL}/transactions`, Component: <Transactions /> },
+
+  // Vendor Mangement
+  { path: `${process.env.PUBLIC_URL}/vendor-management`, Component: <VendorManagement /> },
+
+  // Product Mangement
+  { path: `${process.env.PUBLIC_URL}/product-management`, Component: <ProductManagement /> },
+
+  // Pricing Mangement
+  { path: `${process.env.PUBLIC_URL}/pricing-management`, Component: <PricingManagement /> },
+
+  // Reports Mangement
+  { path: `${process.env.PUBLIC_URL}/report-management`, Component: <Reports /> },
+
+  // System Settings
+  // Category Management
+  { path: `${process.env.PUBLIC_URL}/settings/category-management`, Component: <CategoryManagement /> },
+  { path: `${process.env.PUBLIC_URL}/settings/commission-management`, Component: <CommissionManagement /> },
 
   // Widgets
   { path: `${process.env.PUBLIC_URL}/widgets/general`, Component: <General />},

@@ -9,7 +9,7 @@ const Header = () => {
     <header className="page-header row">
       <div className="logo-wrapper d-flex align-items-center col-auto">
         <Link
-          to={`${process.env.PUBLIC_URL}/dashboard/default`}
+          to={`${process.env.PUBLIC_URL}/dashboard`}
           className="mx-2"
         >
           <Image

@@ -1,93 +1,157 @@
-import { MenuItem } from '../../Type/Layout/Sidebar';
+import { MenuItem } from "../../Type/Layout/Sidebar";
 
 export const MenuList: MenuItem[] = [
   {
-    title: 'Admin',
+    title: "Admin",
     Items: [
       {
-        title: 'Dashboard',
+        title: "Dashboard",
         id: 1,
-        icon: 'Home',
-        type: 'link',
-        path: `${process.env.PUBLIC_URL}/dashboard/default`,
+        icon: "Home",
+        type: "link",
+        path: `${process.env.PUBLIC_URL}/dashboard`,
       },
       {
-        title: 'User',
+        title: "Users",
         id: 2,
-        icon: 'Profile',
-        type: 'link',
-        // path: `/users`,
-      },
-      {
-        title: 'Order',
-        id: 3,
-        icon: 'Bag',
-        type: 'link',
-        // path: `/orders`,
-      },
-      {
-        title: 'Transactions',
-        id: 4,
-        icon: 'Swap',
-        type: 'link',
-        // path: `/transactions`,
-      },
-      {
-        title: 'Vendor',
-        id: 5,
-        icon: 'Add-user',
-        type: 'link',
-        // path: `/vendors`,
-      },
-      {
-        title: 'Product',
-        id: 6,
-        icon: 'Category',
-        type: 'link',
-        // path: `/products`,
-      },
-      {
-        title: 'Deposit',
-        id: 7,
-        icon: 'Bookmark',
-        type: 'link',
-        // path: `/deposit`,
-      },
-      {
-        title: 'Pricing & Commission',
-        id: 8,
-        icon: 'Pie',
-        type: 'link',
-        // path: `/pricing-and-commission`,
-      },
-      {
-        title: 'Reports',
-        id: 9,
-        icon: 'Chart',
-        type: 'link',
-        // path: `/reports`,
-      },
-      {
-        title: 'System Settings',
-        id: 10,
-        icon: 'Setting',
-        type: 'sub',
+        icon: "Profile",
+        type: "sub",
+        active: false,  
         children: [
           {
-            // path: `/category`,
-            title: 'Category',
-            type: 'link',
+            path: `${process.env.PUBLIC_URL}/user-management`,
+            type: "link",
+            title: "Manage",
+          },
+        ],
+      },
+      {
+        title: "Digital Purchases",
+        id: 3,
+        icon: "Tick-square",
+        type: "link",
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/purchases`,
+            type: "link",
+            title: "Manage"
+          },
+        ],
+      },
+      {
+        title: "Orders",
+        id: 4,
+        icon: "Bag",
+        type: "link",
+        active: false,
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/order-management`,
+            title: "Manage",
+            type: "link",
+          },
+        ],
+      },
+      {
+        title: "Deposits",
+        id: 5,
+        icon: "Bookmark",
+        type: "link",
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/deposit-management`,
+            type: "link",
+            title: "Manage",
+          },
+        ],
+      },
+      {
+        title: "Transactions",
+        id: 6,
+        icon: "Swap",
+        type: "link",
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/transactions`,
+            type: "link",
+            title: "Manage",
+          },
+        ],
+      },
+      {
+        title: "Vendors",
+        id: 7,
+        icon: "Add-user",
+        type: "link",
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/vendor-management`,
+            type: "link",
+            title: "Manage",
+          },
+        ],
+      },
+      {
+        title: "Products",
+        id: 8,
+        icon: "Category",
+        type: "link",
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/product-management`,
+            type: "link",
+            title: "Manage",
+          },
+        ],
+      },
+      {
+        title: "Pricing & Commission",
+        id: 9,
+        icon: "Pie",
+        type: "link",
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/pricing-management`,
+            type: "link",
+            title: "Manage",
+          },
+        ],
+      },
+      {
+        title: "Reports",
+        id: 10,
+        icon: "Chart",
+        type: "link",
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/report-management`,
+            type: "link",
+            title: "Manage",
+          },
+        ],
+      },
+      {
+        title: "System Settings",
+        id: 11,
+        icon: "Setting",
+        type: "sub",
+        active: false,
+        children: [
+          {
+            path: `${process.env.PUBLIC_URL}/settings/category-management`,
+            title: "Category",
+            type: "link",
           },
           {
-            // path: `/commission`,
-            title: 'Commision',
-            type: 'link',
+            path: `${process.env.PUBLIC_URL}/settings/commission-management`,
+            title: "Commision",
+            type: "link",
           },
-          {
-            // path: `roles-and-permission`,
-            title: 'Roles & Permission',
-            type: 'link',
-          },
+          // {
+          //   // path: `roles-and-permission`,
+          //   title: "Roles & Permission",
+          //   type: "link",
+          // },
         ],
       },
     ],
