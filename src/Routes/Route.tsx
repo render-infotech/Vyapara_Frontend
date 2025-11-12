@@ -126,7 +126,9 @@ import CategoryManagement from "../Pages/Vyapara/Admin/SystemSettings/CategoryMa
 import CommissionManagement from "../Pages/Vyapara/Admin/SystemSettings/CommissionManagement/CommissionManagement";
 import Transactions from "../Pages/Vyapara/Admin/Transactions/Transactions";
 import UserManagement from "../Pages/Vyapara/Admin/UserManagement/UserManagement";
+import VendorEditPage from "../Pages/Vyapara/Admin/VendorManagement/VendorEditPage";
 import VendorManagement from "../Pages/Vyapara/Admin/VendorManagement/VendorManagement";
+import VendorRegPage from "../Pages/Vyapara/Admin/VendorManagement/VendorRegPage";
 import Charts from "../Pages/Widgets/Charts/Charts";
 import General from "../Pages/Widgets/General/General";
 
@@ -156,6 +158,8 @@ const routes = [
 
   // Vendor Mangement
   { path: `${process.env.PUBLIC_URL}/vendor-management`, Component: <VendorManagement /> },
+  { path: `${process.env.PUBLIC_URL}/edit-vendor`, Component: <VendorEditPage /> },
+  { path: `${process.env.PUBLIC_URL}/vendor-registration`, Component: <VendorRegPage /> },
 
   // Product Mangement
   { path: `${process.env.PUBLIC_URL}/product-management`, Component: <ProductManagement /> },

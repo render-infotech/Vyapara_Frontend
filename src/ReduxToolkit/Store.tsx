@@ -19,6 +19,8 @@ import BookmarkHeaderSlice from "./Reducers/BookmarkHeaderSlice";
 import ThemeCustomizerSlice from "./Reducers/ThemeCustomizerSlice";
 import UserReducer from "./Reducers/Users/UserSlice";
 import VendorTabSlice from "./Reducers/Vendors/VendorTabSlice";
+import VendorRegSlice from "./Reducers/Vendors/VendorRegSlice";
+import VendorEditSlice from "./Reducers/Vendors/VendorEditSlice";
 
 
 const Store = configureStore({
@@ -42,7 +44,9 @@ const Store = configureStore({
     bookmarkHeader:BookmarkHeaderSlice,
     themeCustomizer: ThemeCustomizerSlice,
     user: UserReducer,
-    vendorTab: VendorTabSlice
+    vendorTab: VendorTabSlice,
+    vendorReg: VendorRegSlice,
+    vendorEdit: VendorEditSlice,
   },
 });
 

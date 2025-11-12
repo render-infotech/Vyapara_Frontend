@@ -88,7 +88,7 @@ const Login = () => {
       toast.success(response.data.message);
       const redirectPath = sessionStorage.getItem("postLoginRedirect");
       sessionStorage.removeItem("postLoginRedirect");
-      navigate(redirectPath || `${process.env.PUBLIC_URL}/dashboard`);
+      navigate(redirectPath || "/dashboard");
     } catch (err: any) {
       dispatch(loginFailure());
       const message = err?.response?.data?.message || "Something went wrong";
@@ -112,9 +112,9 @@ const Login = () => {
               <Link className="logo text-center" to={Href}>
                 <Image
                   className="img-fluid"
-                  height={150}
-                  width={150}
-                  src={dynamicImage("vyapara/logo_H_2-removebg.png")}
+                  height={75}
+                  width={75}
+                  src={dynamicImage("vyapara/vyapara-logo-removebg.png")}
                   alt="logo"
                 />
               </Link>

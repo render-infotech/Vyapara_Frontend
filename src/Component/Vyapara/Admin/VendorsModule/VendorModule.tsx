@@ -11,7 +11,7 @@ import {
 } from "reactstrap";
 import { VendorManagement } from "../../../../utils/Constant";
 import VendorsTab from "./VendorsTable/VendorsTab";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Btn } from "../../../../AbstractElements";
 import { Field, FieldProps, Form, Formik } from "formik";
 import { useAppDispatch, useAppSelector } from "../../../../ReduxToolkit/Hooks";
@@ -19,6 +19,7 @@ import { Vendor } from "../../../../Type/Vyapara/Admin/Vendors/VendorManangement
 import axiosCall from "../../../../Api/APIcall";
 import { toast } from "react-toastify";
 import { setAllVendors } from "../../../../ReduxToolkit/Reducers/Vendors/VendorTabSlice";
+import Loader from "../../Loader/Loader";
 
 // location filter options will be derived from vendor data
 
@@ -31,6 +32,7 @@ export interface VendorApiResponse {
 function VendorModule() {
   const dispatch = useAppDispatch();
   const { allVendors } = useAppSelector((state) => state.vendorTab);
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState<string>("");
@@ -70,6 +72,14 @@ function VendorModule() {
   // ✅ filter change handler
   const handleScheduleListForm = (values: { scheduling_list_id: string }) => {
     setSelectedLocation(values.scheduling_list_id);
+  };
+
+  const handleClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      navigate("/vendor-registration");
+      setLoading(false);
+    }, 800);
   };
 
   return (
@@ -123,7 +133,8 @@ function VendorModule() {
                 sm="6"
                 className="mt-3 mb-4 d-flex justify-content-end"
               >
-                <Link to="">
+                {loading && <Loader />}
+                <Link to="#" onClick={handleClick}>
                   <Btn color="primary">
                     <i className="fa fa-plus-circle me-2" />
                     Add New Vendor

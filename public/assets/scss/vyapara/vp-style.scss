@@ -46,7 +46,6 @@
   ) !important;
 }
 
-
 // .custom-login-btn.btn-primary {
 //   transition: all 0.2s ease-in-out;
 // }
@@ -66,6 +65,60 @@
   border-color: #f2be50 transparent #f2be50 transparent !important; /* Example: Indigo */
 }
 // Loader Color Ends
+
+// Card header-1 Start
+.custom-card-header.card-header {
+  padding: 18px 7px !important;
+}
+
+// Card header-1 End
+
+//Phone Number Input Starts
+
+.PhoneInputInput {
+  border: none;
+  background-color: inherit;
+  color: inherit;
+}
+
+.PhoneInputInput:focus-visible {
+  border: none;
+}
+
+//Phone Number Input Ends
+
+//Stepper Form Starts
+
+.basic-wizard .stepper-horizontal .step .step-bar-left,
+.basic-wizard .stepper-horizontal .step .step-bar-right {
+  background-color: rgba($primary-color, 1);
+}
+
+//Stepper Form Ends
+
+//sticky-breadcrumbs starts
+.sticky-breadcrumbs {
+  position: sticky !important;
+  top: 4.8rem;
+  background-color: inherit;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.scrolled {
+  z-index: 8;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+}
+
+//sticky-breadcrumbs ends
+
+// Select Field Styles starts
+
+.react-select__control css-13cymwt-control {
+  background-color: #f4f5f8 !important;
+}
+
+// Select Field Styles ends
 
 // Change in variables.scss for the primary-color
 // $primary-color: #f2be50 !important;
